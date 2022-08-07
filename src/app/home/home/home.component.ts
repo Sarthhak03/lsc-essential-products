@@ -17,12 +17,18 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.products = ProductData;
-    this.categories = CategoryData;
+    setTimeout(() => {
+      this.products = ProductData;
+      this.categories = CategoryData;
+    }, 2000);
   }
 
-  getCategoryName(){
-    
+  getCategoryName(id : number): string{
+    return this.categories.find(x => x.id === id)?.name || '';
+  }
+
+  getShortenTitle(title : string): string{
+    return `${title.substring(0,50)}...`;
   }
 
 }
