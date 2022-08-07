@@ -1,34 +1,4 @@
 <div class="container">
   <h1>Browse all the Products</h1>
-  <app-spinner *ngIf="!products" ></app-spinner>
-  <div class="row" *ngIf="products">
-    <div class="col-md-3" *ngFor="let item of products">
-      <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <h5 class="border-bottom pb-2 mb-0">{{getCategoryName(item.categoryId)}}</h5>
-        <div class="card" style="width: 18rem;">
-          <img *ngIf="item.productImages.length" src="data:{{item.productImages[0].mime}};base64,{{item.productImages[0].base64Image}}" class="card-img-top">
-          <img *ngIf="!item.productImages.length" src="../../../assets/duck.png" class="card-img-top" alt="..." style="height: 212px;">
-          <div class="card-body">
-            <p class="card-text" [title]="item.name">{{getShortenTitle(item.name)}}</p>
-            <div class="row">
-              <div class="col-md-6">
-                <p>
-                  <button class="btn btn-outline-warning btn-sm">View Details</button>
-                </p>
-              </div>
-              <div class="col-md-6">
-                <p>
-                  <button class="btn btn-outline-success btn-sm">Add to wishList!!!</button>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div>
-  <pre>{{products[0] | json}}</pre>
+  <app-products-view></app-products-view>
 </div>
