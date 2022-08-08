@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about/about.component';
 import { HeaderComponent } from './header/header/header.component';
 import { HomeComponent } from './home/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     SharedModule,
-    BrowserModule
+    BrowserModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
