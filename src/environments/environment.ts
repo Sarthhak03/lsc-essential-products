@@ -1,9 +1,18 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
+import { EnvironmentConfiguration } from "src/app/models/environment.configuration";
+export const environment: EnvironmentConfiguration = {
+  env_name: 'dev',
+  production: false,
+  apiUrl: 'https://lsc-essential-products.azurewebsites.net/api', //'https://localhost:5001/api',
+  apiEndpoints: {
+    category: 'category',
+    product: 'product',
+    wishlist: 'wishlist',
+    owner: 'owner'
+  },
+  cacheTimeInMinutes: 30,
 };
 
 /*

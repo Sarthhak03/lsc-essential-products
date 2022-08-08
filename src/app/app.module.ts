@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header/header.component';
 import { HomeComponent } from './home/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ProductModule } from './product/product.module';
   imports: [
     SharedModule,
     BrowserModule,
-    ProductModule
+    ProductModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
