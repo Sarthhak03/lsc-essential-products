@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
-import { CategoryData } from 'src/app/static-data/category-data';
-import { ProductData } from 'src/app/static-data/product-data';
+
 
 @Component({
   selector: 'app-products-view',
@@ -10,16 +9,13 @@ import { ProductData } from 'src/app/static-data/product-data';
   styleUrls: ['./products-view.component.css']
 })
 export class ProductsViewComponent implements OnInit {
-  products! : Product[];
-  categories : Category[] = [];
+  @Input() products! : Product[];
+  @Input() categories : Category[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.products = ProductData;
-      this.categories = CategoryData;
-    }, 2000);
+    
   }
 
   getCategoryName(id : number): string{
